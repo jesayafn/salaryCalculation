@@ -29,7 +29,6 @@ class SalaryCalc {
                 return;
         }
 
-        // Hitung persentase lembur
         switch (overtime) {
             case 1:
                 percentOvertime = 0.3;
