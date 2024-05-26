@@ -7,7 +7,12 @@ class SalaryCalc {
         
         char workClass;
         int overtime;
-        double basicSalary = 0, percentOvertime, overtimeComp, totalSalary;
+        double basicSalary, percentOvertime, overtimeComp, totalSalary;
+
+        double[] basicSalaryArray = {5000000, 6500000, 9500000};
+        double[] percentOvertimeArray = {0.3,0.32,0.34,0.36,0.38};
+
+
 
         System.out.print("Masukkan golongan karyawan (A/B/C): ");
         workClass = scanner.next().charAt(0);
@@ -15,26 +20,26 @@ class SalaryCalc {
         overtime = scanner.nextInt();
 
         if (workClass == 'A') {
-            basicSalary = 5000000;
+            basicSalary = basicSalaryArray[0];
         } else if (workClass == 'B') {
-            basicSalary = 6500000;
+            basicSalary = basicSalaryArray[1];
         } else if (workClass == 'C') {
-            basicSalary = 9500000;
+            basicSalary = basicSalaryArray[2];
         } else {
             System.out.println("Golongan yang dimasukkan tidak valid.");
             return;
         }
 
         if (overtime == 1) {
-            percentOvertime = 0.3;
+            percentOvertime = percentOvertimeArray[0];
         } else if (overtime == 2) {
-            percentOvertime = 0.32;
+            percentOvertime = percentOvertimeArray[1];
         } else if (overtime == 3) {
-            percentOvertime = 0.34;
+            percentOvertime = percentOvertimeArray[2];
         } else if (overtime == 4) {
-            percentOvertime = 0.36;
+            percentOvertime = percentOvertimeArray[3];
         } else {
-            percentOvertime = 0.38;
+            percentOvertime = percentOvertimeArray[4];
         }
 
         overtimeComp = percentOvertime * basicSalary * overtime;
